@@ -1,0 +1,25 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "Stack",
+        "Sliding_window/Subarray",
+        "Sliding_window/Sliding_hashmap_and _set/Longest Substring with K Uniques",
+        "Sliding_window/Sliding_hashmap_and _set/992. Subarrays with K Different Integers",
+        "Sliding_window/Sliding_hashmap_and _set/930. Binary Subarrays With Sum",
+        "Sliding_window/Sliding_hashmap_and _set/424. Longest Repeating Character Replacement",
+        "Sliding_window/Sliding_hashmap_and _set/1248. Count Number of Nice Subarrays",
+        "Recursion/print_n_to_1",
+        "Recursion/Print_1_to_n",
+        "Linked List/even_odd",
+        "Linked List/Intersection_LL",
+        "Heap",
+        "Binary_Tree",
+        "Binary Tree",
+        "Binary Search/The Painter's Partition Problem &&  410. Split Array Largest",
+        "Binary Search/Aggressive Cows",
+        "Binary Search/1482. Minimum Number of Days to Make m Bouquets",
+        "Binary Search/1283. Find the Smallest Divisor Given a Threshold",
+        "Binary Search/1011. Capacity To Ship Packages Within D Days",
+        "Graph"
+    ]
+}
