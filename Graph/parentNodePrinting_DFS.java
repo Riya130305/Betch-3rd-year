@@ -15,14 +15,23 @@ public class parentNodePrinting_DFS {
             ArrayList<Integer> ans= new  ArrayList<Integer>(adj.size());
             for(int i=0;i<adj.size();i++)
             {
-                dfs(adj,i,visited,ans);
+                if(!visited[i])
+                dfs(adj,i,visited,ans,-1);
             }
-            System.out.println(ans);
+            // System.out.println(ans);
     }    
-    public static void dfs(ArrayList<ArrayList<Integer>> adj , int node, boolean[] visited,ArrayList<Integer> ans){
+    public static void dfs(ArrayList<ArrayList<Integer>> adj , int node, boolean[] visited,ArrayList<Integer> ans,int parent){
         visited[node]=true;
         ans.add(node);
-        
+        System.out.println("parent "+parent+" Node " +node);
+
+        for(int nbr:adj.get(node))
+        {
+            if(!visited[nbr]){
+                dfs(adj,nbr,visited,ans,node);
+            }
+        }
+
     }
 
 }
