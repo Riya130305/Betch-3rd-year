@@ -3,7 +3,6 @@ import java.util.*;
 public class Bird_and_maximum_fruit_gathering {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         // Input size of array
         System.out.print("Enter size of array: ");
         int n = sc.nextInt();
