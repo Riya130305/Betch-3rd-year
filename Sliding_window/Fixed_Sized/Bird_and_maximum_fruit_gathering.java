@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Maximum_sumSubarrayLessThanEquqlTo {
+public class Bird_and_maximum_fruit_gathering {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -16,16 +16,16 @@ public class Maximum_sumSubarrayLessThanEquqlTo {
             arr[i] = sc.nextInt();
         }
 
-        // Input x
-        System.out.print("Enter value of x: ");
-        long x = sc.nextLong();
+        // Input totalTime (window size)
+        System.out.print("Enter totalTime: ");
+        int totalTime = sc.nextInt();
 
         // Call solution function
         Solution sol = new Solution();
-        long result = sol.findMaxSubarraySum(arr, x);
+        int result = sol.maxFruits(arr, totalTime);
 
         // Output result
-        System.out.println("Maximum subarray sum <= " + x + " is: " + result);
+        System.out.println("Maximum fruits collected in " + totalTime + " time is: " + result);
 
         sc.close();
     }
@@ -33,17 +33,17 @@ public class Maximum_sumSubarrayLessThanEquqlTo {
 
 // User-defined Solution class
 class Solution {
-    public long findMaxSubarraySum(int[] arr, long x) {
+    public int maxFruits(int[] arr, int totalTime) {
         int s = 0;
         int e = 0;
-        long sum = 0;   // sum should be long (not int) because x is long
-        long max = Long.MIN_VALUE;
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
 
         while (e < arr.length) {
             sum += arr[e];
 
-            // shrink window if sum exceeds x
-            while (sum > x && s <= e) {
+            // If window size > totalTime, shrink window
+            if (e - s + 1 > totalTime) {
                 sum -= arr[s];
                 s++;
             }
