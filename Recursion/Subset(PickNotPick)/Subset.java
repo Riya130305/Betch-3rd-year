@@ -38,7 +38,7 @@ public class Subset {
             ans.add(new ArrayList<Integer>(path));
             return;
         }
-        // Not pick condition
+        // Not pick condition( will return empty List after all it Recursive call [[]])
         fun(nums, idx+1, ans, path);
         // Pick condition
         path.add(nums[idx]);

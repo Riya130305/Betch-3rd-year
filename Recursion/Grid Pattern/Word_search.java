@@ -55,7 +55,7 @@ public class Word_search {
 
         int[] row={-1,0,1,0};
         int[] col={0,1,0,-1};
-
+        //Recursive calls
         for(int k=0;k<4;k++)
         {
             int r=i+row[k];
