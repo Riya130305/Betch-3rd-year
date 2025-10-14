@@ -10,10 +10,10 @@ public class Subset_sum_problem {
             arr[i]=sc.nextInt();
         }
         int sum=sc.nextInt();
-        boolean ans = isSubsetSun(arr,sum);
+        boolean ans = isSubsetSum(arr,sum);
         System.out.println("ans-->"+ans);
     }
-  static Boolean isSubsetSum(int arr[], int sum) {
+  public static Boolean isSubsetSum(int arr[], int sum) {
         // code here
         int n=arr.length;
         boolean[][] dp=new boolean[n][sum+1];
@@ -43,3 +43,4 @@ public class Subset_sum_problem {
         }
         return dp[arr.length-1][sum];
     }}
+
