@@ -15,12 +15,12 @@
         "Heap",
         "Graph",
         "Binary_Tree",
-        "Binary Tree",
         "Binary Search/The Painter's Partition Problem &&  410. Split Array Largest",
         "Binary Search/Aggressive Cows",
         "Binary Search/1482. Minimum Number of Days to Make m Bouquets",
         "Binary Search/1283. Find the Smallest Divisor Given a Threshold",
         "Binary Search/1011. Capacity To Ship Packages Within D Days",
-        "Array"
+        "Array",
+        "DP/Tabulation(Without 2D grid)"
     ]
 }
