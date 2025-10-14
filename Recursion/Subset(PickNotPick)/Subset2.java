@@ -28,7 +28,7 @@ public class Subset2 {
         // }
         ans.add(new ArrayList<>(path));
         for (int i = idx; i < nums.length; i++) {
-            // THE KEY LOGIC: Skip duplicates
+            
             // If this is not the first element in our current consideration (i > idx)
             // AND the current element is the same as the previous one (nums[i] == nums[i-1]),
             // then skip it to avoid creating a duplicate subset.
