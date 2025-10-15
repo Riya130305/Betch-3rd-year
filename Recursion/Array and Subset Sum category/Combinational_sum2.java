@@ -8,7 +8,7 @@ public class Combinational_sum2 {
         System.out.println("ans-->"+ans);
     }
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        Arrays.sort(candidates);
+        Arrays.sort(candidates);//nlog(n)
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
         fun(candidates,target,ans,path,0);
@@ -33,7 +33,8 @@ public class Combinational_sum2 {
             path.add(candidates[i]);
             fun(candidates, target -candidates[i], arr, path, i+1);
             path.remove(path.size()-1);
-            
+            //T.C=O(2^n*n)+O(nlogn)
+            //S.C=O(n)+o(n)+o(logn)
         }
     }
 }
