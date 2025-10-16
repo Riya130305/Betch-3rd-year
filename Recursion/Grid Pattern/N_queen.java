@@ -9,7 +9,7 @@ public class N_queen{
     {
         List<List<String>> arr = new ArrayList<>();
         //List<String> path = new ArrayList<>();
-        String[][] grid=new String[n][n];
+        String[][] grid=new String[n][n];//O(n*n)
         for(String[] i:grid)
         {
             Arrays.fill(i,".");
@@ -31,7 +31,7 @@ public class N_queen{
             arr.add(path);
             return;
         }
-        for(int col=0;col<n;col++)
+        for(int col=0;col<n;col++)//O(n)
         {
             if(isSafe(grid,row,col))
             {
@@ -75,6 +75,8 @@ public class N_queen{
             return false;
         }
         return true;
+        //t.c =O(n!*n)
+        //s.c =O(n*n)
     }
 
 }
