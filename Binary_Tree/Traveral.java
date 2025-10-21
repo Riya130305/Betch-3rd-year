@@ -1,12 +1,12 @@
 import java.util.*;
-public class Lecture1 {
+public class Traveral {
     public static void trev(Node root){
         /*Base case*/
         if(root==null)
         return;
         
-        trev(root.left);
         System.out.println("root data "+root.data);
+        trev(root.left);
         trev(root.right);
     }
     public static void main(String[] args) {
