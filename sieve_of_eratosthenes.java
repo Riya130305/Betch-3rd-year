@@ -16,25 +16,31 @@ public class sieve_of_eratosthenes {
         }
     }
 }
+//understand by https://www.youtube.com/watch?v=dyrRM8dTEus
 class Solution{
     ArrayList<Integer> prime(int n){
-        ArrayList<Integer> arr1= new ArrayList<>();
-        boolean[] p=new boolean[n+1];
-        Arrays.fill(p,true);
-        for(int i=2;i<=Math.sqrt(n);i++){
-            if(p[i]==true){
-                for(int j=i*i;j<=n;j=j+i){
-                p[j]=false;
-            }
+          //Sives of elothosesther
+    boolean[] isPrime=new boolean[n+1];
+    Arrays.fill(isPrime,true);
+    isPrime[0]=false;
+    isPrime[1]=false;
+    for(int i=2;i*i<=n;i++)
+    {
+        //2*i to check the direct multilp of 2*2 ..2*3(means second digit of table)
+        for(int j=2*i;j<=n;j+=i)//j+=i to direct jump to there multiple
+        {
+            isPrime[j]=false;
         }
     }
-
-        for(int i=2;i<=n;i++){
-           if(p[i]==true){
-            arr1.add(i);
-           }   
+    ArrayList<Integer> arr = new ArrayList<>();
+    for(int i=0;i<isPrime.length;i++)
+    {
+        if(isPrime[i]==true)
+        {
+            arr.add(i);
         }
-        return arr1;
+    }
+    return arr;
     }
 }
 
