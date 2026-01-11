@@ -1,3 +1,4 @@
+package DSU;
 import java.util.*;
 class UnionFind
 {
@@ -20,21 +21,21 @@ class UnionFind
         {
             return node;
         }
-        // RECURSIVLEY CALL KARNA HAI PARENT
-        return find(parent[node]);
+        // Path compression for efficiency
+        return parent[node] = find(parent[node]);
     }
 
     boolean union(int u,int v)
     {
         int pu=find(u);
         int pv=find(v);
-        // if parent are same so we will not do any union(ki dono already es ho leader ke andder hai)
+        // if parents are the same, no union needed as both are under the same leader
         if(pv==pu)
         {
             return false;
         }
-        // phle leader tk jaao and then rank ke according attach kaaro(jada rank ke neeche kam rank wala add ho jaaega) 
-       else if(rank[pu]>rank[pv])
+        // first find the leaders and attach based on rank (attach lower rank to higher rank)
+        else if(rank[pu]>rank[pv])
         {
             parent[pv]=pu;
         }
@@ -42,7 +43,7 @@ class UnionFind
         {
             parent[pu]=pv;
         }
-        else//if rank is same toh kisi ko bhi kisi ke sath add krdo
+        else// if ranks are equal, attach one to the other and increase rank
         {
             parent[pv]=pu;
             rank[pu]++;
@@ -57,7 +58,6 @@ public class UniFind {
         uf.union(1,2);
         uf.union(1,3);
         uf.union(2,4);
-        // uf.union(1,2);
         if(uf.union(1,5))
         {
             System.out.println("possible");

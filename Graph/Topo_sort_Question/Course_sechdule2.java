@@ -1,3 +1,4 @@
+package Topo_sort_Question;
 import java.util.*;
 public class Course_sechdule2{
     public static void main(String[] args) {
@@ -6,13 +7,13 @@ public class Course_sechdule2{
         int[][] array= new int[n][2];
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<2;i++)
+            for(int j=0;j<2;j++)
             {
                 array[i][j]=sc.nextInt();
             }
         }
         int[] ans =findOrder(n,array);
-        System.out.println(ans);
+        System.out.println(Arrays.toString(ans));
     }
     public static int[] findOrder(int n, int[][] array)
     {
@@ -46,15 +47,19 @@ public class Course_sechdule2{
         while(!q.isEmpty())
         {
             int val=q.poll();
-            ans[i]=val;
-            if(inDegree[val]!=0)
+            ans[i++]=val;
+            for(int neighbor : adj.get(val))
             {
-                inDegree[val]--;
+                inDegree[neighbor]--;
+                if(inDegree[neighbor]==0)
+                {
+                    q.add(neighbor);
+                }
             }
-            if(inDegree[val]==0)
-            {
-                q.add(val);
-            }
+        }
+        if(i != n)
+        {
+            return new int[0];
         }
         return ans;
     }

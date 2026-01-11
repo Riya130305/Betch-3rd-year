@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Course_sechdule2",
+            "request": "launch",
+            "mainClass": "Topo_sort_Question.Course_sechdule2",
+            "projectName": "Java_new_57b31b3f"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
