@@ -16,7 +16,7 @@ public class brute_force {
         System.out.println(ans);
     }
 
-    public static int fun(int[]nums,int threshold,int mid)
+    public static int fun(int[]nums,int mid)
     {
         int sum =0;
         for(int j=0;j<nums.length;j++)
@@ -27,19 +27,26 @@ public class brute_force {
     }
 
      public static int smallestDivisor(int[] nums, int threshold) {
-        // int ans =(int) Math.ceil((double)5/3);
         int max=Integer.MIN_VALUE;
         for(int i:nums)
         {
             max=Math.max(max,i);
         }
-        for(int i=1;i<=max;i++)
+        int low=1, high=max;
+        int ans=max;
+        while(low<=high)
         {
-            if(fun(nums,threshold,i)<=threshold)
+            int mid=low+(high-low)/2;
+            if(fun(nums,mid)<=threshold)
             {
-                return i;
+                ans=mid;
+                high=mid-1;
+            }
+            else
+            {
+                low=mid+1;
             }
         }
-        return -1;
+        return ans;
     }
 }

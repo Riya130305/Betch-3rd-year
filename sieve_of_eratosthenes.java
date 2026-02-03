@@ -16,7 +16,7 @@ public class sieve_of_eratosthenes {
         }
     }
 }
-//understand by https://www.youtube.com/watch?v=dyrRM8dTEus
+//Study by https://www.youtube.com/watch?v=dyrRM8dTEus
 class Solution{
     ArrayList<Integer> prime(int n){
           //Sives of elothosesther
