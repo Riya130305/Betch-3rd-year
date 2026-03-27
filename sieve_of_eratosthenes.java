@@ -19,7 +19,7 @@ public class sieve_of_eratosthenes {
 //Study by https://www.youtube.com/watch?v=dyrRM8dTEus
 class Solution{
     ArrayList<Integer> prime(int n){
-          //Sives of elothosesther
+          //Sives of eratosthenes
     boolean[] isPrime=new boolean[n+1];
     Arrays.fill(isPrime,true);
     isPrime[0]=false;
